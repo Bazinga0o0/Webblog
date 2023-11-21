@@ -3,6 +3,9 @@ body{
     padding: 0;
     overflow-x: hidden;
 }
+
+    
+
 .menu {
     list-style-type: none;
     margin: 0;
@@ -16,8 +19,58 @@ body{
     top: 0;
     left: 0;
     z-index: 1;
+    visibility: hidden;
+
 
 }
+@media (aspect-ratio >0.8) {
+    .menu {
+        list-style-type: none;
+        margin: 0;
+        margin-top: 0;
+        width: 15vw;
+        padding: 0;
+        background-color: #f1f1f1;
+        height: 100vh; /* Full height */
+        position: fixed; /* Make it stick, even on scroll */
+        overflow: auto; /* Enable scrolling if the sidenav has too much content */
+        top: 0;
+        left: 0;
+        z-index: 1;
+        visibility: visible;
+    
+    
+    }
+    .menu li a {
+        display: block;
+        color: black;
+        padding: 1vh 1vh;
+        font-size: 2vh;
+        text-decoration: none;
+    }
+      
+      /* Change the link color on hover */
+    .menu li a:hover {
+        background-color: #555;
+        color: white;
+    }
+    
+    
+      
+    .menu li {
+        text-align: center;
+        height: 4vh;
+    }
+      
+    
+    .active{
+        background-color: lightblue;
+    
+    }
+}
+  
+
+
   
 .menu li a {
     display: block;
@@ -51,27 +104,28 @@ body{
     height: auto;
     left:0;
     font-size: 90%;
-    width: 63vw;
+    width: 61vw;
     margin-top: 4vh;
 
 
 }
 .ul1 picture img{
-    width: 66vw;
+    width: 61vw;
     aspect-ratio: 21/9;
     object-fit: cover;
 }
 #slideshow {
-    width: 63vw;
+    width: 61vw;
 }
 .ul {
-    right: 1vw;
+    margin-right: 2vw;
+    right: 0;
     height: 96vh;
     top : 2vh;
     bottom: 2vh;
     position: fixed;
     width: 16vw;
-    overflow: scroll;
+    overflow-y: scroll;
     list-style: none;
     font-size: 1.9vh;
 
@@ -83,14 +137,12 @@ body{
 .ul li {
     text-align: center;
     border-bottom: 0.4vh solid gray;
-    padding-bottom: 1vh;
     font-size: 1.8vh;
 
 }
 .ul li a {
     display: block;
     color: #000;
-    padding: 1vh;
     text-decoration: none;
     font-weight: bold;
     font-size: 2.2vh;
@@ -150,5 +202,70 @@ body{
     color: black;
     width: 33%;
 }
+ul{
+    padding-inline-start: 0;
+}
+.burger{
+    display: none;
+    z-index: 5;
+    width: 22vw;
+    height: 4vh;
+}
+@media (aspect-ratio <=0.8) {
+    .burger {
+        display: block;
+        position: relative;
+        size: 10vh;
+    }
+    .menu{
+        visibility: hidden;
+        z-index: 1;
+        width: 22vw;
+    }
+    .icons{
+        position: fixed;
+        display: flex;
+        flex-wrap: wrap;
+        width: 22vw;
+        height: auto;
+        bottom: 0;
+        left: 0;
+        text-decoration: none;
+        z-index: 1;
+        word-wrap: break-word;
+        font-size:3vh;
+        margin-bottom: 1%;
+        overflow: hidden;
+        visibility: hidden;
+        z-index: 6;
+    }
+    .ul1{
+        margin-left: 5vw;
+        width: 70vw;
+    }
+    .ul1 picture img{
+        width:70vw;
+        height: auto;
+    }
+    #slideshow {
+        width: 70vw;
+    }
+    .ul{
+        margin-right: 1vw;
+        min-width: 19vw;
+    }
+    .ul li{
+        font-size: 1.2vh;
+        border-bottom: 0.4vh solid gray;
+    }
+    .ul li a{
+        font-size: 1.5vh;
+    }
+    .ul h2{
+        font-size: 2vh;
+    }
+    .top{
+        margin-top: 4vh;
+    }
 
-
+}

@@ -1,4 +1,25 @@
-// JavaScript
+window.onload = function() {
+    // Überprüfen Sie das Seitenverhältnis
+    if (window.innerWidth / window.innerHeight > 0.8) {
+        // Verstecken Sie das Menü
+        document.querySelector('.menu').style.visibility = 'visible';
+        document.querySelector('.icons').style.visibility = 'visible';
+    }else{
+        document.querySelector('.menu').style.visibility = 'hidden';
+        document.querySelector('.icons').style.visibility = 'hidden';
+    }
+};
+window.addEventListener('resize', function() {
+    // Überprüfen Sie das Seitenverhältnis
+    if (window.innerWidth / window.innerHeight > 0.8) {
+        // Zeigen Sie das Menü
+        document.querySelector('.menu').style.visibility = 'visible';
+        document.querySelector('.icons').style.visibility = 'visible';
+    } else {
+        document.querySelector('.menu').style.visibility = 'hidden';
+        document.querySelector('.icons').style.visibility = 'hidden';
+    }
+});
 var images = ["unibild.jpg",  "unibild2.jpg"];
 var currentIndex = 0;
 
@@ -26,3 +47,13 @@ fetch('articlelist.html')
     .catch(error => {
         console.warn(error);
     });
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('.burger').addEventListener('click', function() {
+        var menu = document.querySelector('.menu');
+        menu.style.visibility = menu.style.visibility === 'hidden' ? 'visible' : 'hidden';
+        console.log(menu.style.visibility);
+        var menu = document.querySelector('.icons');
+        menu.style.visibility = menu.style.visibility === 'hidden' ? 'visible' : 'hidden';
+    });
+});
