@@ -51,7 +51,7 @@ body{
     height: auto;
     left:0;
     font-size: 2vh;
-    width: 67vw;
+    width: 63vw;
     margin-top: 4vh;
 
 
@@ -71,7 +71,7 @@ body{
     bottom: 2vh;
     position: fixed;
     width: 16vw;
-
+    overflow: scroll;
     list-style: none;
     font-size: 1.9vh;
 
