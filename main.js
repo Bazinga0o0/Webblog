@@ -1,7 +1,7 @@
 window.onload = function() {
-    // Überprüfen Sie das Seitenverhältnis
+
     if (window.innerWidth / window.innerHeight > 0.8) {
-        // Verstecken Sie das Menü
+
         document.querySelector('.menu').style.visibility = 'visible';
         document.querySelector('.icons').style.visibility = 'visible';
     }else{
@@ -10,9 +10,9 @@ window.onload = function() {
     }
 };
 window.addEventListener('resize', function() {
-    // Überprüfen Sie das Seitenverhältnis
+
     if (window.innerWidth / window.innerHeight > 0.8) {
-        // Zeigen Sie das Menü
+
         document.querySelector('.menu').style.visibility = 'visible';
         document.querySelector('.icons').style.visibility = 'visible';
     } else {
@@ -35,7 +35,7 @@ function nextImage() {
     showImage(currentIndex);
 }
 
-setInterval(nextImage, 5000); // Change image every 3 seconds
+setInterval(nextImage, 5000);
 fetch('articlelist.html')
     .then(response => response.text())
     .then(data => {
