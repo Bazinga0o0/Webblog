@@ -2,110 +2,170 @@ body{
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+
+    background: #232323;
+    color: #cdcdcd;
+    font-family: "Avenir Next", "Avenir", sans-serif;
 }
-
-    
-
-.menu {
-    list-style-type: none;
-    margin: 0;
-    margin-top: 0;
-    width: 15vw;
-    padding: 0;
-    background-color: #f1f1f1;
-    height: 100vh;
+[role="navigation"]{
     position: fixed;
-    overflow: auto;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 50px;
+    background: #232323;
     z-index: 1;
-    visibility: hidden;
-
-
 }
-@media (aspect-ratio >0.8) {
-    .menu {
-        list-style-type: none;
-        margin: 0;
-        margin-top: 0;
-        width: 15vw;
-        padding: 0;
-        background-color: #f1f1f1;
-        height: 100vh;
-        position: fixed;
-        overflow: auto;
-        top: 0;
-        left: 0;
-        z-index: 1;
-        visibility: visible;
-    
-    
-    }
-    .menu li a {
-        display: block;
-        color: black;
-        padding: 1vh 1vh;
-        font-size: 2vh;
-        text-decoration: none;
-    }
-      
-
-    .menu li a:hover {
-        background-color: #555;
-        color: white;
-    }
-    
-    
-      
-    .menu li {
-        text-align: center;
-        height: 4vh;
-    }
-      
-    
-    .active{
-        background-color: lightblue;
-    
-    }
-}
+#menuToggle
+{
+  display: block;
+  position: relative;
+  top: 50px;
+  left: 50px;
   
-
-
+  z-index: 1;
   
-.menu li a {
-    display: block;
-    color: black;
-    padding: 1vh 1vh;
-    font-size: 2vh;
-    text-decoration: none;
-}
+  -webkit-user-select: none;
+  user-select: none;
+}    
+#menuToggle a
+{
+  text-decoration: none;
+  color: #232323;
   
-
-.menu li a:hover {
-    background-color: #555;
-    color: white;
+  transition: color 0.3s ease;
 }
 
-
-  
-.menu li {
-    text-align: center;
-    height: 4vh;
+#menuToggle a:hover
+{
+  color: tomato;
 }
+
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
   
-
-.active{
-    background-color: lightblue;
-
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
 }
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #cdcdcd;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu
+{
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+
+
 .ul1 {
-    margin-left: 17.5vw;
+    margin-left: 17.5vw;    
     position:relative;
     height: auto;
     left:0;
     font-size: 90%;
-    width: 61vw;
-    margin-top: 4vh;
+    width: 59vw;
+    margin-top: 5vh;
 
 
 }
@@ -118,10 +178,11 @@ body{
     width: 61vw;
 }
 .ul {
+    color: white;
     margin-right: 2vw;
     right: 0;
     height: 96vh;
-    top : 2vh;
+    top : 4vh;
     bottom: 2vh;
     position: fixed;
     width: 16vw;
@@ -138,11 +199,12 @@ body{
     text-align: center;
     border-bottom: 0.4vh solid gray;
     font-size: 1.8vh;
+    color: rgb(169, 169, 169)
 
 }
 .ul li a {
     display: block;
-    color: #000;
+    color: rgb(255, 250, 250);
     text-decoration: none;
     font-weight: bold;
     font-size: 2.2vh;
@@ -208,64 +270,52 @@ ul{
 .burger{
     display: none;
     z-index: 5;
-    width: 22vw;
-    height: 4vh;
+    size: 10vh;
 }
 @media (aspect-ratio <=0.8) {
-    .burger {
-        display: block;
-        position: relative;
-        size: 10vh;
-    }
-    .menu{
-        visibility: hidden;
-        z-index: 1;
-        width: 22vw;
-    }
-    .icons{
+    .ul {
+        margin-right: 2vw;
+        right: 0;
+        height: 96vh;
+        top : 4vh;
+        bottom: 2vh;
         position: fixed;
-        display: flex;
-        flex-wrap: wrap;
-        width: 22vw;
-        height: auto;
-        bottom: 0;
-        left: 0;
-        text-decoration: none;
-        z-index: 1;
-        word-wrap: break-word;
-        font-size:3vh;
-        margin-bottom: 1%;
-        overflow: hidden;
-        visibility: hidden;
-        z-index: 6;
+        width: 18vw;
+        overflow-y: scroll;
+        list-style: none;
+        font-size: 3vw;
+    
+        
     }
-    .ul1{
-        margin-left: 5vw;
-        width: 70vw;
+    .ul::-webkit-scrollbar {
+        display: none;
     }
-    .ul1 picture img{
-        width:70vw;
-        height: auto;
-    }
-    #slideshow {
-        width: 70vw;
-    }
-    .ul{
-        margin-right: 1vw;
-        min-width: 19vw;
-    }
-    .ul li{
-        font-size: 1.2vh;
+    .ul li {
+        text-align: center;
         border-bottom: 0.4vh solid gray;
+        font-size: 2.4vw;
+        color: rgb(169, 169, 169)
+    
     }
-    .ul li a{
-        font-size: 1.5vh;
+    .ul li a {
+        display: block;
+        color: rgb(255, 250, 250);
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 2.8vw;
     }
+      
+    
+    .ul li a:hover {
+        background-color: #555;
+        color: white;
+    }
+    
     .ul h2{
-        font-size: 2vh;
-    }
-    .top{
-        margin-top: 4vh;
+        text-align: center;
+        margin-top: 1vh;
+        margin-bottom: 1vh;
+    
     }
 
 }
