@@ -1,6 +1,9 @@
 var images = ["unibild.jpg",  "unibild2.jpg"];
 var currentIndex = 0;
 
+if (window.location.pathname === '/') {
+    window.location.href = "/index.html";
+}
 function showImage(index) {
     var img = $("#slideshow");
     img.fadeOut(700, function() {
@@ -14,8 +17,7 @@ function nextImage() {
 }
 
 
-
-if (window.location.href.indexOf('index.html') > -1) {
+if (window.location.href.indexOf('index.html') > -1){
     setInterval(nextImage, 5000);
     fetch('articlelist.html')
         .then(response => response.text())

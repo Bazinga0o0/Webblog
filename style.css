@@ -127,12 +127,12 @@ body{
 #menu
 {
   position: absolute;
-  width: 300px;
+  width: 220px;
   margin: -100px 0 0 -50px;
   padding: 50px;
   padding-bottom: 25px;
   padding-top: 125px;
-  
+  height: 100vh;
   background: #ededed;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
@@ -158,6 +158,16 @@ body{
   transform: none;
 }
 
+.icons{
+  padding: 0;
+  margin:0;
+  font-size: larger;
+  position: absolute;
+  bottom: 130px;
+  width: 100%;
+  left: 0;
+  align-self: center;
+}
 
 .ul1 {
     margin-left: 17.5vw;    
@@ -224,8 +234,7 @@ body{
 
 }
 .fa {
-
-    width: 100%;
+    width: 32%;
     height : 10%;
     text-align: center;
     text-decoration: none;
@@ -235,35 +244,14 @@ body{
 .fa:hover {
     opacity: 0.7;
 }
-.icons{
-    position: fixed;
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    height: auto;
-    bottom: 0;
-    left: 0;
-    text-decoration: none;
-    z-index: 1;
-    word-wrap: break-word;
-    font-size:3vh;
-    margin-bottom: 1%;
-    overflow: hidden;
-
-
-
-}
 .fa-github{
     color: black;
-    width: 32%;
 }
 .fa-youtube{
     color: black;
-    width: 33%;
 }
 .fa-instagram{
     color: black;
-    width: 32%;
 }
 ul{
     padding-inline-start: 0;
